@@ -1,84 +1,88 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jayoon의 포트폴리오. 그래픽과 웹 실험을 탐색하는 작업 인덱스.">
-  <title>JAYOON / Work Index</title>
-  <link rel="stylesheet" href="./style.css">
-  <script type="module" src="./app.js"></script>
+  <meta name="description" content="Jayoonmaeng is a multidisciplinary design practice exploring the intersections of material, form, and experience across physical and digital media.">
+  <title>Jayoonmaeng — Design &amp; Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;display=swap">
+  <link rel="stylesheet" href="./style.css?v=header-shade40">
+  <script type="module" src="./app.js?v=header-blend"></script>
 </head>
 <body id="top">
-  <a class="skip" href="#main">본문 바로가기</a>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="masthead">
-    <a class="brand" href="#top" aria-label="Jayoon 홈">JAYOON<span>✳</span></a>
-    <nav aria-label="주 메뉴">
-      <a href="#work">Work</a><a href="#lab">Lab</a><a href="#info">Info</a>
+    <a class="brand" href="#top" aria-label="Jayoonmaeng home">Jayoonmaeng</a>
+    <nav class="masthead-nav" aria-label="Main navigation">
+      <a href="./index.html#work">Archive</a>
+      <div class="masthead-services">
+        <a href="./services.html">Services</a>
+        <ul class="service-nav"></ul>
+      </div>
+      <a href="./profile.html">Profile</a>
     </nav>
+    <a class="email-link" href="./contact-card.html" target="jayoon-contact">Email.me</a>
   </header>
 
   <main id="main">
-    <section class="cover" aria-labelledby="cover-title">
-      <div class="cover-type">
-        <p class="cover-label mono">GRAPHIC &amp; WEB PORTFOLIO</p>
-        <h1 id="cover-title" class="name" lang="en" aria-label="Jayoon"><span>JAY</span><span>OON<i>.</i></span></h1>
-        <p class="cover-caption">그래픽과 웹 실험을 모은 작업 인덱스.</p>
-      </div>
-      <div class="cover-art">
-        <div class="cover-grid" aria-hidden="true"></div>
-        <div class="cover-stamp" aria-hidden="true">✳</div>
-        <p class="plate mono">INTERACTIVE STUDY</p>
-        <p class="art-title" lang="en" aria-hidden="true">Orbit<br><i>al.</i></p>
-        <a class="cover-link mono" href="#lab">View in Lab</a>
-      </div>
-    </section>
-
-    <section id="work" class="work" aria-labelledby="work-title">
+    <section id="work" class="work" tabindex="-1" aria-labelledby="work-title">
       <div class="section-heading">
-        <h2 id="work-title" lang="en">Work<span>.</span></h2>
-        <p class="mono">PROJECT INDEX</p>
+        <div><h1 id="work-title">Archive<span>.</span></h1><p class="board-note label">Design across objects, interfaces, and experiences.</p></div>
+        <div class="view-options label" role="group" aria-label="Work view" hidden>
+          <button type="button" aria-controls="board" aria-pressed="true">Board</button>
+          <button type="button" aria-controls="work-index" aria-pressed="false">Index</button>
+        </div>
       </div>
-      <p class="index-note">예시 프로젝트 · 제목을 누르면 상세 내용을 볼 수 있습니다.</p>
-      <div class="index-labels mono" aria-hidden="true"><span>PROJECT</span><span>MEDIUM</span></div>
-      <ul class="index">
-        <li><button class="project" type="button" data-project="orbital" aria-haspopup="dialog">
-          <strong lang="en">Orbital</strong><span>3D 인터랙션</span><span class="plus" aria-hidden="true">+</span>
-        </button></li>
-        <li><button class="project" type="button" data-project="form" aria-haspopup="dialog">
-          <strong lang="en">Form Index</strong><span>타이포그래피 · 그리드</span><span class="plus" aria-hidden="true">+</span>
-        </button></li>
-      </ul>
+      <div id="board" class="board"></div>
+      <div id="work-index" hidden>
+        <div class="index-labels label" aria-hidden="true"><span>PROJECT</span><span>CATEGORY</span></div>
+        <ul class="index"></ul>
+      </div>
     </section>
 
     <section id="lab" class="lab" aria-labelledby="lab-title">
       <div class="lab-copy">
-        <p class="mono">THREE.JS / ORBITAL</p>
+        <p class="label">THREE.JS / ORBITAL</p>
         <h2 id="lab-title" lang="en">Lab<span>.</span></h2>
-        <p>반복되는 곡선이 만드는 입체를 탐색합니다. 포인터를 움직이면 형태를 보는 각도가 달라집니다.</p>
+        <div class="lab-intro"></div>
       </div>
       <div class="scene">
         <div class="fallback" aria-hidden="true"></div>
         <canvas id="orbital" aria-hidden="true"></canvas>
-        <button class="motion-toggle mono" type="button" hidden>움직임 멈추기</button>
+        <button class="motion-toggle label" type="button" hidden>Pause motion</button>
       </div>
     </section>
 
-    <section id="info" class="info" aria-labelledby="info-title">
-      <h2 id="info-title" lang="en">Info<span>.</span></h2>
-      <div class="info-copy">
-        <p class="mono">ABOUT JAYOON</p>
-        <p>안녕하세요, Jayoon입니다. 그래픽과 인터랙티브 웹에서 글자, 형태, 움직임이 만나는 방식을 탐구합니다.</p>
-      </div>
+    <div class="lab-studies" aria-label="Lab studies"></div>
+
+    <section id="contact" class="info" tabindex="-1" aria-labelledby="contact-title">
+      <h2 id="contact-title" lang="en">Contact<span>.</span></h2>
+      <div class="info-copy contact-copy content-stack"></div>
     </section>
   </main>
 
-  <footer class="footer mono"><span>JAYOON / PORTFOLIO</span><a href="#top">맨 위로</a></footer>
+  <footer class="footer label"><span>JAYOON / PORTFOLIO</span><a href="#top">Back to top</a></footer>
   <dialog id="project-dialog" aria-labelledby="project-title">
-    <form method="dialog"><button class="close" aria-label="닫기" autofocus>×</button></form>
-    <p class="mono">예시 프로젝트</p>
-    <h2 id="project-title"></h2>
-    <p id="project-description"></p>
-    <a class="project-lab-link mono" href="#lab" hidden>Lab에서 보기</a>
+    <header class="detail-bar">
+      <span class="brand">Jayoonmaeng</span>
+      <form method="dialog">
+        <button class="close label" aria-label="Close project" autofocus>Back to work <span aria-hidden="true">×</span></button>
+      </form>
+    </header>
+    <div class="detail-layout">
+      <section class="detail-copy" aria-labelledby="project-title">
+        <h2 id="project-title" lang="en"></h2>
+        <p id="project-subtitle" class="project-subtitle"></p>
+        <p id="project-description"></p>
+        <dl class="detail-meta"></dl>
+        <div class="detail-lists content-stack"></div>
+        <a class="project-lab-link label" hidden></a>
+      </section>
+      <div class="detail-gallery" aria-label="Project images"></div>
+    </div>
   </dialog>
 </body>
 </html>
