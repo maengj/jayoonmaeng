@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jayoon의 포트폴리오. 그래픽과 웹 실험을 탐색하는 작업 인덱스.">
+  <title>JAYOON / Work Index</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">본문 바로가기</a>
+  <header class="masthead">
+    <a class="brand" href="#top" aria-label="Jayoon 홈">JAYOON<span>✳</span></a>
+    <nav aria-label="주 메뉴">
+      <a href="#work">Work</a><a href="#lab">Lab</a><a href="#info">Info</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="cover" aria-labelledby="cover-title">
+      <div class="cover-type">
+        <p class="cover-label mono">GRAPHIC &amp; WEB PORTFOLIO</p>
+        <h1 id="cover-title" class="name" lang="en" aria-label="Jayoon"><span>JAY</span><span>OON<i>.</i></span></h1>
+        <p class="cover-caption">그래픽과 웹 실험을 모은 작업 인덱스.</p>
+      </div>
+      <div class="cover-art">
+        <div class="cover-grid" aria-hidden="true"></div>
+        <div class="cover-stamp" aria-hidden="true">✳</div>
+        <p class="plate mono">INTERACTIVE STUDY</p>
+        <p class="art-title" lang="en" aria-hidden="true">Orbit<br><i>al.</i></p>
+        <a class="cover-link mono" href="#lab">View in Lab</a>
+      </div>
+    </section>
+
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <h2 id="work-title" lang="en">Work<span>.</span></h2>
+        <p class="mono">PROJECT INDEX</p>
+      </div>
+      <p class="index-note">예시 프로젝트 · 제목을 누르면 상세 내용을 볼 수 있습니다.</p>
+      <div class="index-labels mono" aria-hidden="true"><span>PROJECT</span><span>MEDIUM</span></div>
+      <ul class="index">
+        <li><button class="project" type="button" data-project="orbital" aria-haspopup="dialog">
+          <strong lang="en">Orbital</strong><span>3D 인터랙션</span><span class="plus" aria-hidden="true">+</span>
+        </button></li>
+        <li><button class="project" type="button" data-project="form" aria-haspopup="dialog">
+          <strong lang="en">Form Index</strong><span>타이포그래피 · 그리드</span><span class="plus" aria-hidden="true">+</span>
+        </button></li>
+      </ul>
+    </section>
+
+    <section id="lab" class="lab" aria-labelledby="lab-title">
+      <div class="lab-copy">
+        <p class="mono">THREE.JS / ORBITAL</p>
+        <h2 id="lab-title" lang="en">Lab<span>.</span></h2>
+        <p>반복되는 곡선이 만드는 입체를 탐색합니다. 포인터를 움직이면 형태를 보는 각도가 달라집니다.</p>
+      </div>
+      <div class="scene">
+        <div class="fallback" aria-hidden="true"></div>
+        <canvas id="orbital" aria-hidden="true"></canvas>
+        <button class="motion-toggle mono" type="button" hidden>움직임 멈추기</button>
+      </div>
+    </section>
+
+    <section id="info" class="info" aria-labelledby="info-title">
+      <h2 id="info-title" lang="en">Info<span>.</span></h2>
+      <div class="info-copy">
+        <p class="mono">ABOUT JAYOON</p>
+        <p>안녕하세요, Jayoon입니다. 그래픽과 인터랙티브 웹에서 글자, 형태, 움직임이 만나는 방식을 탐구합니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono"><span>JAYOON / PORTFOLIO</span><a href="#top">맨 위로</a></footer>
+  <dialog id="project-dialog" aria-labelledby="project-title">
+    <form method="dialog"><button class="close" aria-label="닫기" autofocus>×</button></form>
+    <p class="mono">예시 프로젝트</p>
+    <h2 id="project-title"></h2>
+    <p id="project-description"></p>
+    <a class="project-lab-link mono" href="#lab" hidden>Lab에서 보기</a>
+  </dialog>
+</body>
+</html>
